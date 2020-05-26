@@ -5,7 +5,7 @@ white_russian = Recipe(
     'white russian',
     2,
     3,
-    'milk,vodka,ice,kalua' 
+    'milk,vodka,ice,kalua',
     'dessert',
     'A nice and sweet cocktail'
     )
@@ -58,7 +58,7 @@ for cat, val in my_book.recipe_list.items():
 
 cheesecake = Recipe(
     'cheesecake',
-    6,
+    5,
     60,
     'mascarpone,yogourt,sugar,eggs,speculos,walnuts,flour',
     'dessert',
