@@ -5,7 +5,7 @@ white_russian = Recipe(
     'white russian',
     2,
     3,
-    'milk,vodka,ice,kalua',
+    ['milk', 'vodka', 'ice', 'kalua'],
     'dessert',
     'A nice and sweet cocktail'
     )
@@ -32,7 +32,7 @@ bloody_mary = Recipe(
     'bloody mary',
     4,
     4,
-    'tomato juice,vodka,ice,celery salt,pepper,tabasco',
+    ['tomato juice', 'vodka', 'ice', 'celery salt', 'pepper', 'tabasco'],
     'lunch',
     'A spicy drink that will fill you like a meal!'
 )
@@ -43,7 +43,7 @@ pastaga = Recipe(
     'Pastis',
     0,
     1,
-    'pastis,ice,water',
+    ['pastis', 'ice', 'water'],
     'starter',
     'The perfect starter to any summer meal'
 )
@@ -60,7 +60,7 @@ cheesecake = Recipe(
     'cheesecake',
     5,
     60,
-    'mascarpone,yogourt,sugar,eggs,speculos,walnuts,flour',
+    ['mascarpone', 'yogourt', 'sugar', 'eggs', 'speculos', 'walnuts', 'flour'],
     'dessert',
     'The famous dessert from New-York, with a creamy twist!'
 )

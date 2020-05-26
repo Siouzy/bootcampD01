@@ -11,7 +11,7 @@ class Recipe:
             print(recipe_type)
             print('Not a valid recipe type')
             return
-        self.ingredients = ingredients.split(',')
+        self.ingredients = ingredients
         if len(self.ingredients) == 0:
             print('ingredients list cannot be empty')
             return
