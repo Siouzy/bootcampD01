@@ -66,67 +66,44 @@ class Vector:
         return Vector(result_vec)
 
     def __truediv__(self, other):
-        if (type(other) != int and type(other) != Vector) or\
-           (type(other) != int and self.size != other.size):
-            print('Division allowed only between vector and',
-                  ' scalar or two vectors of same dimension')
+        if type(other) is not int:
+            print('Division allowed only between vector and scalar')
             return
         result_vec = []
         try:
-            if type(other) == int:
-                for val in self.values:
-                    result_vec.append(val / other)
-            else:
-                for s, o in zip(self.values, other.values):
-                    result_vec.append(s / o)
+            for val in self.values:
+                result_vec.append(val / other)
         except ZeroDivisionError:
             print('Error: division by zero')
             return
         return Vector(result_vec)
 
     def __rtruediv__(self, other):
-        if type(other) != Vector or self.size != other.size:
-            print('Division allowed only between vector and',
-                  ' scalar or two vectors of same dimension')
-            return
-        result_vec = []
-        try:
-            for s, o in zip(self.values, other.values):
-                result_vec.append(o / s)
-        except ZeroDivisionError:
-            print('Error: division by zero')
-            return
-        return Vector(result_vec)
+        print('Error: cannot divide by a scalar')
 
     def __mul__(self, other):
         if (type(other) != int and type(other) != Vector) or\
            (type(other) != int and self.size != other.size):
-            print('Multiplication allowed only between vector and',
+            print('Error: Multiplication allowed only between vector and',
                   ' scalar or two vectors of same dimension')
             return
-        result_vec = []
         if type(other) == int:
+            result_vec = []
             for val in self.values:
                 result_vec.append(val * other)
+            return Vector(result_vec)
         else:
+            result = 0
             for s, o in zip(self.values, other.values):
-                result_vec.append(s * o)
-        return Vector(result_vec)
+                result += s * o
+        return result
 
     def __rmul__(self, other):
-        if (type(other) != int and type(other) != Vector) or\
-           (type(other) != int and self.size != other.size):
-            print('Multiplication allowed only between vector',
+        if type(other) is not int:
+            print('Error: Multiplication allowed only between vector',
                   ' and scalar or two vectors of same dimension')
             return
-        result_vec = []
-        if type(other) == int:
-            for val in self.values:
-                result_vec.append(val * other)
-        else:
-            for s, o in zip(self.values, other.values):
-                result_vec.append(s * o)
-        return Vector(result_vec)
+        return self * other
 
     def __str__(self):
         if self.size == 0:
@@ -139,31 +116,3 @@ class Vector:
 
     def __repr__(self):
         return ('<object Vector at address %x>' % hex(id(self)))
-
-
-print('vector = Vector(7)')
-vector1 = Vector(7)
-print(str(vector1))
-
-print('vector = Vector((-1, 6))')
-vector2 = Vector((-1, 6))
-print(str(vector2))
-
-print('vector = Vector([1.0, 7.0, 12.0, 4.0])')
-vector3 = Vector([1.0, 7.0, 12.0, 4.0])
-print((vector3))
-
-print('print(vector1 + vector2)')
-print(vector1 + vector2)
-
-print('print(vector1 - vector2)')
-print(vector1 - vector2)
-
-print('print(vector1 * vector2)')
-print(vector1 * vector2)
-
-print('print(vector1 / vector2)')
-print(vector1 / vector2)
-
-print('print(vector1 / 2)')
-print(vector1 / 2)
