@@ -27,6 +27,9 @@ class Vector:
             print('Initialize vector with list<float> or int or range')
 
     def __add__(self, other):
+        if type(other) is not Vector:
+            print('Can only add two Vector types')
+            return
         if self.size != other.size:
             print('Vectors are not the same dimension')
             return
@@ -39,6 +42,9 @@ class Vector:
         return self + other
 
     def __sub__(self, other):
+        if type(other) is not Vector:
+            print('Can only sub two Vector types')
+            return
         if self.size != other.size:
             print('Vectors are not the same dimension')
             return
@@ -48,6 +54,9 @@ class Vector:
         return Vector(result_vec)
 
     def __rsub__(self, other):
+        if type(other) is not Vector:
+            print('Can only sub two Vector types')
+            return
         if self.size != other.size:
             print('Vectors are not the same dimension')
             return
