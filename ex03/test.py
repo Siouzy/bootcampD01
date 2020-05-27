@@ -30,3 +30,4 @@ m6 = Matrix([[0., 9., 2.], [8., 8., 8.], [0., 9., 8.]])
 print(m6)
 m7 = m5 * m6
 print(m7.data)
+print(repr(m7))

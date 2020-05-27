@@ -186,4 +186,4 @@ class Matrix:
         return(str_format.format(*(tuple(big_data))))
 
     def __repr__(self):
-        return ('<object Vector at address %x>' % hex(id(self)))
+        return ('<object Vector at address %s>' % hex(id(self)))
